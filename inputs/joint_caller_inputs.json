@@ -1,0 +1,43 @@
+{
+  "JointCalling.referenceFASTA":
+    "<s3_mount_path>/hs38DH.fa",
+
+  "JointCalling.referenceIndex":
+    "<s3_mount_path>/hs38DH.fai",
+
+  "JointCalling.referenceDict":
+    "<s3_mount_path>/hs38DH.dict",
+
+  "JointCalling.sampleNameMap":
+    "<s3_mount_path>/sampleNameMap.txt",
+
+  "JointCalling.dbsnpVCF":
+    "<s3_mount_path>/dbsnp_146.hg38.vcf.gz",
+
+  "JointCalling.dbsnpVCFIndex":
+    "<s3_mount_path>/dbsnp_146.hg38.vcf.gz.tbi",
+
+  "JointCalling.input_intervals":
+    "<local_path_for_interval_list>/interval_list.intervals",
+ 
+  "JointCalling.gatk_jar":
+    "<s3_mount_path>/gatk-4.1.1.0/gatk-package-4.1.1.0-local.jar",
+  
+  "JointCalling.java_oracle":
+    "<s3_mount_path>/jre1.8.0_221/bin/java",
+
+  "JointCalling.genomicsdb_path":
+    "<s3_mount_path>/genomicsdb",
+  
+  "JointCalling.wr_cwd":
+    "/home/ubuntu",
+
+  "JointCalling.wr_cloud_script":
+    "<local_path_for_cloud_script>/cloud.script",
+
+  "JointCalling.wr_cloud_os":
+    "<cloud_os_name>",
+
+  "JointCalling.wr_cloud_flavor":
+    "<flavor_name>"
+}
