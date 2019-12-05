@@ -1,0 +1,43 @@
+{
+  "JointCalling.referenceFASTA":
+    "/home/ubuntu/mnt/ref/hs38DH.fa",
+
+  "JointCalling.referenceIndex":
+    "/home/ubuntu/mnt/ref/hs38DH.fai",
+
+  "JointCalling.referenceDict":
+    "/home/ubuntu/mnt/ref/hs38DH.dict",
+
+  "JointCalling.sampleNameMap":
+    "/home/ubuntu/mnt/ref/sampleNameMap.txt",
+
+  "JointCalling.dbsnpVCF":
+    "/home/ubuntu/mnt/ref/dbsnp_146.hg38.vcf.gz",
+
+  "JointCalling.dbsnpVCFIndex":
+    "/home/ubuntu/mnt/ref/dbsnp_146.hg38.vcf.gz.tbi",
+
+  "JointCalling.gatk_jar":
+    "/home/ubuntu/mnt/gatk-4.1.1.0/gatk-package-4.1.1.0-local.jar",
+  
+  "JointCalling.java_oracle":
+    "/home/ubuntu/mnt/jre1.8.0_221/bin/java",
+
+  "JointCalling.genomicsdb_path":
+    "/home/ubuntu/mnt/genomicsdb",
+  
+  "JointCalling.input_intervals":
+    "/home/ubuntu/cromwell_wr_openstack/interval_list.intervals",
+
+  "JointCalling.wr_cwd":
+    "/home/ubuntu",
+
+  "JointCalling.wr_cloud_script":
+    "/home/ubuntu/cromwell_wr_openstack/cloud.script",
+
+  "JointCalling.wr_cloud_os":
+    "docker_java11_s3fs_jq_ac55_image",
+
+  "JointCalling.wr_cloud_flavor":
+    "m1.small"
+}
