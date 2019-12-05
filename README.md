@@ -6,7 +6,7 @@
 **1. Cromwell Configuration file:**
 
 a) Without mysql:
-Refer "cromwell.conf" and pass below mentioned variables from input.json :
+Refer "cromwell.conf" under config folder and pass below mentioned variables from input.json :
 - wr_cwd : Current working directory on wr worker nodes (Im using /home/ubuntu)
 - cloud_script : cloud script location on local host where you will be triggering your cromwell wdl file. This script will have any commands which need to get executed on wr worker node as soon as it comes up and before any other wdl commands get run on it. I'm using this script to mount my s3 bucket onto the worker node at location /home/ubuntu/mnt (Please refer file named "cloud.script" from this the repo)
 - wr_cloud_os : Openstack image name which has java and all other software/tools installed 
@@ -14,7 +14,7 @@ Refer "cromwell.conf" and pass below mentioned variables from input.json :
 - s3_mount_path: Mount path of s3 bucket which will be used as root directory of your cromwell and will be a shared location between master and all the wr worker nodes (eg. /home/ubuntu/mnt/). Please note that this variable will not get passed from the input.json file, you have be manually hard code it.
 
 b) With mysql:
-Refer "cromwell_callCaching.conf" and apart from above mentioned variables in section (a), please update below variables as well:
+Refer "cromwell_callCaching.conf" under config folder and apart from above mentioned variables in section (a), please update below variables as well:
 - hostname : hostname or url of mysql database (eg. localhost)
 - database_name : database name (previously created a database eg. cromwell, as if there is no existing database, cromwell will throw error)
 - username : mysql username
@@ -54,7 +54,7 @@ In each task definition configure runtime attributes:
  ...
 ```
 
-> Please refer joint_caller.wdl to understand why and where these parameters are being used.
+> Please refer joint_caller/joint_caller.wdl to understand why and where these parameters are being used. These can also be hard-coded directly to the config file.
 
 **3. Input Json File:**
 
@@ -82,7 +82,7 @@ Update below mentioned parameters in Input Json file which will pass these value
     "<flavor_name>"
 ```
 
-> Please refer joint_caller_inputs.json.EXAMPLE in the repo.
+> Please refer joint_caller/joint_caller_inputs.json.EXAMPLE in the repo.
 
  
 **4. Sample Name Map File:**
@@ -99,7 +99,7 @@ EGAN00001214851 /home/ubuntu/mnt/20000_samples/14820945.HXV2.paired308.f6466eef3
 EGAN00001286350 /home/ubuntu/mnt/20000_samples/14820982.HXV2.paired308.18d32776e3.capmq_filtered_interval_list.interval_list.1_of_200.g.vcf.gz
 ```
 
-> Please refer sampleNameMap.txt in the repo.
+> Please refer inputs/sampleNameMap.txt in the repo.
 
 
 **5. Interval list file :**
@@ -113,7 +113,7 @@ chr1:820849-910849
 ...
 ```
 
-> Please refer interval_list.intervals in the repo.
+> Please refer inputs/interval_list.intervals in the repo.
 
 
 > Note: Please note that we are using oracle java to run cromwell as openjdk java core dumps quite often. We have pushed java and gatk_jar to our s3 bucket and configure same in the input.json file.
@@ -132,5 +132,5 @@ java -Dconfig.file=<cromwell_config_file> -jar <cromwell_jar_file> run <wdl_file
 
 Eg.
 ```
-java -Dconfig.file=cromwell.conf -jar cromwell-44.jar run joint_caller.wdl -i joint_caller_inputs.json
+java -Dconfig.file=config/cromwell.conf -jar cromwell-44.jar run joint_caller/joint_caller.wdl -i joint_caller/joint_caller_inputs.json
 ```
