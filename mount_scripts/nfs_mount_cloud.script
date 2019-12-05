@@ -1,0 +1,8 @@
+if grep -qs '/home/ubuntu/nfs_mnt ' /proc/mounts ; then
+    echo "nfs mounted."
+else
+    mkdir -p /home/ubuntu/nfs_mnt
+    sudo mount <nfs_server_internal_ip>:<nfs_server_mount_path> /home/ubuntu/nfs_mnt
+fi
+
+ulimit -c unlimited
