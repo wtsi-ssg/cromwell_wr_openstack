@@ -1,0 +1,34 @@
+{
+  "HaplotypeCallerGvcfWF.input_bam_list": 
+    "<path_to_input_bam_list>",
+  
+  "HaplotypeCallerGvcfWF.ref_fasta": 
+    "<path_to_ref_file>",
+  
+  "HaplotypeCallerGvcfWF.ref_fasta_index": 
+    "<path_to_ref_index_file>",
+
+  "HaplotypeCallerGvcfWF.ref_dict": 
+    "<path_to_ref_dict_file>",
+  
+  "HaplotypeCallerGvcfWF.gatk_jar": 
+    "<path_to_gatk_jar/gatk-4.1.1.0/gatk-package-4.1.1.0-local.jar>",
+  
+  "HaplotypeCallerGvcfWF.java_oracle": 
+    "<path_to_jre_java/jre1.8.0_221/bin/java>",
+  
+  "HaplotypeCallerGvcfWF.output_vcf_path": 
+    "<path_to_output_vcf_s3_or_nfs>",
+  
+  "HaplotypeCallerGvcfWF.wr_cwd": 
+    "/home/ubuntu",
+  
+  "HaplotypeCallerGvcfWF.wr_cloud_os": 
+    "<cloud_os_name>",
+
+  "HaplotypeCallerGvcfWF.wr_cloud_flavor": 
+    "<flavor_name>",
+
+  "HaplotypeCallerGvcfWF.wr_cloud_script": 
+    "<local_path_for_cloud_script>/cloud.script"
+}
