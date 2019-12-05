@@ -1,0 +1,8 @@
+if grep -qs '<mount_path> ' /proc/mounts; then
+    echo "It's mounted."
+else
+    mkdir -p <mount_path>
+    s3fs -o url=https://cog.sanger.ac.uk -o endpoint=us-east-1 -o sigv2,noatime,rw,uid=1000,gid=1000,umask=0002,allow_other -o passwd_file=~/.s3fs <bucket_name> <mount_path>
+fi
+
+ulimit -c unlimited
