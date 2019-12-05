@@ -1,4 +1,4 @@
-# Cromwell-WR-Openstack (GATK JointCalling)
+# Cromwell-WR-Openstack (GATK JointCalling & HaplotypeCaller)
 
 
 ## Setting up files
