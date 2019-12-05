@@ -1,0 +1,14 @@
+if grep -qs '/home/ubuntu/orig_mnt ' /proc/mounts ; then
+    echo "rclone s3 bucket mounted."
+else
+    mkdir -p /home/ubuntu/orig_mnt
+    rclone mount remote:ac55bkt /home/ubuntu/orig_mnt --dir-cache-time 96h --umask 0002 --vfs-cache-mode writes --allow-other --daemon
+fi
+
+if grep -qs '/home/ubuntu/mnt ' /proc/mounts ; then
+    echo "rclone cache mounted."
+else
+    mkdir -p /home/ubuntu/mnt
+    rclone mount --allow-other --allow-non-empty cache: /home/ubuntu/mnt --daemon
+fi
+ulimit -c unlimited
